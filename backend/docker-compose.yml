@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  api-inicie-environment:
+    container_name: "api-inicie"
+    build:
+      context: ./.docker
+      dockerfile: api.dockerfile
+      args:
+        - UID=$USUID
+        - GID=$GRPID    
+    user: $USUID:$GRPID
+    volumes:
+      - './:/var/www'
+      - './.docker/php.ini:/usr/local/etc/php/conf.d/docker.ini'
+    ports:
+    - '3000:3000'

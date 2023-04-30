@@ -1,0 +1,15 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Api\Users\Domain\Repository\UserRepository;
+
+class UserController extends Controller
+{
+    protected UserRepository $repository;
+
+    public function __construct()
+    {
+        $this->repository = new UserRepository();
+    }
+}
