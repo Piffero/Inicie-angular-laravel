@@ -1,0 +1,11 @@
+.body {
+    margin: 20px;
+}
+ 
+ .text {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+            line-clamp: 2; 
+    -webkit-box-orient: vertical;
+ }

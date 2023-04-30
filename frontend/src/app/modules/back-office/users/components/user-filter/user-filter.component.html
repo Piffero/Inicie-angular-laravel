@@ -1,0 +1,27 @@
+<div class="col-md-12 col-12 col-sm-12">
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h4>List Users</h4>
+        </div>
+    </div>
+    <div class="space"></div>
+
+    <form [formGroup]="form">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="mb-3">
+                    <label class="form-label">User ID</label>
+                    <input type="text" class="form-control" [inputMask]="onlyNumbersMask" formControlName="id">
+                </div>
+            </div>
+            <div class="col-lg-6" style="position: relative; top: 10px">
+                <button type="button" class="btn btn-primary m-15" (click)="actionSearch()" [disabled]="form.invalid"><span class="text">Buscar</span></button>
+                <button type="button" class="btn btn-light m-15" (click)="actionClear()"><span class="text">Limpar</span></button>             
+            </div>
+        </div>
+    </form>
+
+    <div class="space"></div>
+    <div class="space"></div>
+</div>

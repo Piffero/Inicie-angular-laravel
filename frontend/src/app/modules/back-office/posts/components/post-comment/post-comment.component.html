@@ -1,0 +1,39 @@
+<div class="col-lg-4">
+    <div class="card-box">
+        <h4 class="header-title m-b-30">Comments ({{comments.length}})</h4>
+        <div style="height: 300px; overflow-x: hidden; overflow-y: scroll;">
+            <div *ngFor="let comment of comments;">
+                <div class="media m-b-20">
+                    <div class="media-body">
+                        <h5 class="mt-0">{{comment.name}}</h5>
+                        <p class="font-13 text-muted mb-0">{{comment.body}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="media m-b-20">
+            <div class="media-body">
+                <form [formGroup]="form">
+                    <input  type="text" class="form-control input-sm" 
+                    placeholder="Some text value..."
+                    formControlName="sendText">
+
+                    <small>
+                        <div *ngIf="form.controls['sendText'].invalid && form.controls['sendText'].touched" class="alert-danger">
+                            <div *ngIf="form.controls['sendText'].errors">
+                                &nbsp; A text is required.
+                            </div>
+                        </div>
+                    </small>
+                </form>                
+                <div class="mt-2 text-right">                    
+                    <button class="btn btn-sm btn-custom waves-effect waves-light" 
+                            type="button"
+                            [disabled]="form.controls['sendText'].invalid"
+                            (click)="actionSend()">Send</button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>

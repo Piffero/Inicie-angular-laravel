@@ -1,0 +1,93 @@
+<div class="contaner-form">
+    <!-- Title -->
+    <div class="col-md-12">
+        <h4 class="mb-3 mb-lg-0">{{title}}</h4> <span style="color: red;">{{message}}</span>
+        <div class="hstack gap">
+            <button class="btn btn-light btn-sm btn-icon-text m-15" *ngIf="!isView" (click)="actionFall()"><span class="text">Cancel</span></button>
+            <button class="btn btn-primary btn-sm btn-icon-text m-15" [disabled]="form.invalid" (click)="actionSave()"><span class="text">Save</span></button>
+        </div>
+    </div>    
+  
+    <!-- Main content -->
+    <div class="row">
+        <form [formGroup]="form">
+            <!-- Left side -->
+            <div class="col-lg-12">
+                <!-- Basic information -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                    <h3 class="h6 mb-4">Basic information</h3>
+                    <div class="row">
+                        <div class="col-lg-6">
+                        <div class="mb-3">
+                            <label class="form-label">Name</label>
+                            <input type="text" class="form-control" formControlName="name">
+                            <small>
+                                <div *ngIf="form.controls['name'].invalid && form.controls['name'].touched" class="alert-danger">
+                                    <div *ngIf="form.controls['name'].errors">
+                                        &nbsp; Name is required.
+                                    </div>
+                                </div>
+                            </small>
+                        </div>
+                        </div>
+                        <div class="col-lg-6">
+                        <div class="mb-3">
+                            <label class="form-label">Gender</label>
+                            <select class="select2 form-control select2-hidden-accessible" 
+                                    data-select2-placeholder="Select country" data-select2-id="select2-data-1-gy14" 
+                                    tabindex="-1" aria-hidden="true"
+                                    formControlName="gender" (change)="alterGender($event)">                            
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                            <small>
+                                <div *ngIf="form.controls['gender'].invalid && form.controls['gender'].touched" class="alert-danger">
+                                    <div *ngIf="form.controls['gender'].errors">
+                                        &nbsp; Gender is required.
+                                    </div>
+                                </div>
+                            </small>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" formControlName="email" [email]="true">
+                            <small>
+                                <div *ngIf="form.controls['email'].invalid && form.controls['email'].touched" class="alert-danger">
+                                    <div *ngIf="form.controls['email'].errors">
+                                        &nbsp; Email valid is required.
+                                    </div>
+                                </div>
+                            </small>
+                        </div>
+                        </div>
+                        <div class="col-lg-6">
+                        <div class="mb-3">
+                            <label class="form-label">Status</label>
+                            <select class="select2 form-control select2-hidden-accessible" 
+                                    data-select2-placeholder="Select country" data-select2-id="select2-data-1-gy14" 
+                                    tabindex="-1" aria-hidden="true"
+                                    formControlName="status">                            
+                                <option value="active">Active</option>
+                                <option value="disabled">Disabled</option>
+                            </select>
+                            <small>
+                                <div *ngIf="form.controls['status'].invalid && form.controls['status'].touched" class="alert-danger">
+                                    <div *ngIf="form.controls['status'].errors">
+                                        &nbsp; Status is required.
+                                    </div>
+                                </div>
+                            </small>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>  
+        </form>
+    </div>
+  </div>

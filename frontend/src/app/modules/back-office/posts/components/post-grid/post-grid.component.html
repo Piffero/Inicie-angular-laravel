@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-me-12 mb-2">
+        <div class="hstack gap">
+            <button class="btn btn-primary btn-sm btn-icon-text m-15" (click)="actionAdd()"><span class="text">Criar Novo Post</span></button>
+        </div>
+    </div>
+    <div *ngFor="let post of posts;">
+        <div class="col-md-12 board rounded-3">
+            <div class="col-md-2">
+                <a [routerLink]="'/system/back-office/posts/1/view'">
+                    <img src="https://www.bootdey.com/image/280x280/FF00FF/000000" class="width-90 rounded-3"
+                        alt="">
+                </a>
+            </div>
+            <div class="col-mf-6">
+                <div class="row">
+                    <h6 class="mb-1">
+                        <a [href]="'/system/back-office/posts/'+post.id+'/view'" class="link text-reset">{{post.title}}</a>
+                    </h6>
+                    <span class="text-muted d-block mb-2 small">
+                        <span class="body text">{{post.body}}</span> 
+                    </span>                            
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

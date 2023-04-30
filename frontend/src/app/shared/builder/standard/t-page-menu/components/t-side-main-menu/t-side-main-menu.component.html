@@ -1,0 +1,5 @@
+<ul class="nav nav-pills nav-stacked well">    
+    <li *ngFor="let menuMainItem of menuMainItems; let i = index" [ngClass]="{'active': menuMainItem.active }">
+        <a href="{{menuMainItem.route}}">{{menuMainItem.caption}}</a>
+    </li>    
+</ul>

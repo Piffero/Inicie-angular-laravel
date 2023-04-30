@@ -1,0 +1,12 @@
+version: '3.2'
+services:
+    app:
+        container_name: "app.inicie"
+        build: 
+           context: ./.docker
+           dockerfile: app.dockerfile
+        volumes:
+            - ./:/home/node/app
+        ports: 
+            - "4200:4200"
+        command: ng serve --host 0.0.0.0 --port 4200

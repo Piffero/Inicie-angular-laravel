@@ -1,0 +1,26 @@
+<div class="contaner-form">
+
+    <div class="panel">
+        <img class="pic img-circle" src="https://bootdey.com/img/Content/avatar/avatar{{numberAvatar}}.png" alt="...">
+        <div class="name">  
+            <small><span style="color: red">Id: {{(currentUser)? currentUser.id: ''}}</span> {{(currentUser)? currentUser.name: '...'}}</small></div>
+        <a href="javascript: void(0)" class="btn btn-xs btn-primary pull-right" style="margin:10px;">
+            <span class="glyphicon glyphicon-picture"></span> Change cover
+        </a>
+    </div>
+
+    <ul class="nav nav-tabs" id="myTab">
+        <li [ngClass]="{'active': activeInbox }"><a href="javascript: void(0)" data-toggle="tab" (click)="activeTab('inbox')" ><i class="fa fa-envelope-o"></i>My Post</a></li>
+        <li [ngClass]="{'active': activeData }"><a href="javascript: void(0)" data-toggle="tab" (click)="activeTab('data')"><i class="fa fa-clock-o"></i> Data User</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div [ngClass]="{'active': activeInbox }" class="tab-pane">
+            <profile-posts [currentUserPosts]="currentUserPosts"></profile-posts>
+        </div>
+
+        <div [ngClass]="{'active': activeData }" class="tab-pane">
+            <sing-up-form [title]="profileTitle" (gender)="setAvatar($event)" (currentUser)="setCurrentUser($event)"></sing-up-form>
+        </div>
+    </div>
+</div>

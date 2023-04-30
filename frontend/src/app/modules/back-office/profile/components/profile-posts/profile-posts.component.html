@@ -1,0 +1,15 @@
+<br>
+<div *ngFor="let post of currentUserPosts;">
+    <div class="media">
+        <a class="pull-left" [href]="'/system/back-office/posts/'+post.id+'/view'">
+            <img class="media-object img-thumbnail" width="100" src="https://www.bootdey.com/image/200x200" alt="...">
+        </a>
+        <div class="media-body">
+            <h4 class="media-heading">{{post.title}}</h4> 
+            <span class="body text">{{post.body}}</span>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="currentUserPosts.length == 0" style="color: red; font-size: large;">Voçê ainda não tem post</div>
+
