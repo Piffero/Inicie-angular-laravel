@@ -30,7 +30,7 @@
 ```sh
 mrdir projeto.inicie
 cd projeto.inicie
-git clone https://github.com/Piffero/inicie.git Backend
+git clone https://github.com/Piffero/Inicie-angular-laravel.git Backend
 cd Backend
 ```
 ### Criar variáveis de usuario e grupo

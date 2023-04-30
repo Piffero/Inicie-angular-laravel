@@ -6,7 +6,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ### Clonar repositório
 
 ```sh
-git@gitlab.com:finnet-sa/projectfinnet/frontend.git
+https://github.com/Piffero/Inicie-angular-laravel Frontend
 
 cd frontend
 ```
